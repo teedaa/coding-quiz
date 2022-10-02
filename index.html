@@ -10,23 +10,30 @@
 </head>
 <body>
     <!-- main div-->
-    <div class ="main-div">
-        <!--navigation bar for high score and timer-->
-        <nav class="top-bar">
-            <button id="high-score">View Highscores</button>
-            <p id="timer">Timer: 0</p>
-        </nav>
-    </div>
-    <div class ="inner-div">
-    <!-- quiz title and content-->
-        <header class="quiz-intro">
-            
-        </header>
-            <!--main quiz section-->
-        <main>
-                
-        </main>
-    </div>
-    <script src="./assets/script.js"/>
+        <div class ="outer-div">
+        <!-- bar for high score and timer-->
+            <div class="top-bar">
+                <button>View Highscores</button>
+                <p>Timer: 0</p>
+            </div>
+
+        <!-- inner -->
+        <section class="centering">
+            <section class ="inner-div">
+                <!-- quiz title and content-->
+                <header class="quiz-intro">
+                    <div>
+                        <p>Are you ready to test your coding knowledge? Once you click start, the timer will count down and you will be presented with a series of coding questions. Answer wrong, and you lose points. Good luck!</p>
+                        <button class="start-button" id="start=button">Start Quiz</button>
+                    </div>
+                </header>
+                <!--main quiz section-->
+                <main>
+                    
+                </main>
+            </section>
+        </section>
+        </div>
+            <script src="./assets/script.js"/>
 </body>
 </html>

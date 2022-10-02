@@ -1,0 +1,82 @@
+/*global definitions*/
+
+*
+{
+    /* border: 1px solid red; */
+}
+/* colors */ 
+
+:root {
+    --darkest: #1D2D44;
+    --dark: #3E5C76;
+    --text: #F0EBD8;
+    --accent: #748CAB;
+}
+
+body {
+    font-family: 'Trebuchet MS', 'Arial', 'sans-serif';
+}
+
+/*background image*/
+
+html {
+    background: url(./background.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover; 
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+p {
+    color: var(--text);
+    font-size: 20px;
+}
+
+.text {
+    color: var(--text);
+    font-size:20px;
+}
+
+/* outer div */ /*outer container */
+
+.outer-div {
+    padding: 10px;
+    height: 100vh;
+}    
+
+/* high score button*/
+
+button {
+    background-color: var(--dark);
+    color: var(--text);
+    font-size: 20px;
+    outline: none;
+
+}
+
+button:hover{
+    color: var(--accent);
+}
+
+/*timer*/
+
+.top-bar p {
+    float: right;
+}
+
+/* inner-div section */
+
+.inner-div {
+    border: solid 1px var(--dark);
+    border-radius: 8px;
+}
+
+/* Header & Quiz intro */
+
+.quiz-intro {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Quiz Content */ 

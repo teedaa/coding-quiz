@@ -2,7 +2,7 @@
 
 *
 {
-    /* border: 1px solid red; */
+    border: 1px solid red;
 }
 /* colors */ 
 
@@ -42,6 +42,9 @@ p {
 .outer-div {
     padding: 10px;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
 }    
 
 /* high score button*/
@@ -51,6 +54,7 @@ button {
     color: var(--text);
     font-size: 20px;
     outline: none;
+    border-radius: 5px;
 
 }
 
@@ -69,14 +73,42 @@ button:hover{
 .inner-div {
     border: solid 1px var(--dark);
     border-radius: 8px;
-}
-
-/* Header & Quiz intro */
-
-.quiz-intro {
-    text-align: center;
-    width: 80%;
+    width: 50%;
     margin: 0 auto;
 }
 
-/* Quiz Content */ 
+/* header & quiz intro */
+
+.quiz-intro, main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    background-color: var(--darkest);
+    opacity: 75%;
+}
+
+
+
+.start-button {
+    display: block;
+    margin: 0 auto;
+}
+
+/* quiz content */ 
+
+main {
+    display: none;
+}
+
+/* questions */
+
+.questions {
+    display: none;
+}
+/* quiz end*/
+
+.end-of-quiz {
+    display: block;
+}

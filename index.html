@@ -14,27 +14,36 @@
         <!-- bar for high score and timer-->
             <div class="top-bar">
                 <button>View Highscores</button>
-                <p>Timer: 0</p>
+                <p id="timer">Timer: 0</p>
             </div>
 
         <!-- inner -->
             <section class ="inner-div">
                 <!-- quiz intro and content-->
-                <header class="quiz-intro">
+                <header class="quiz-intro" id="start-page">
                         <p>Are you ready to test your coding knowledge? Once you click start, the timer will count down and you will be presented with a series of coding questions. Answer wrong, and you lose points. Good luck!</p>
                         <button class="start-button" id="start=button">Start Quiz</button>
                 </header>
                 <!--main quiz section-->
                 <main>
-                    <section class="questions">
-                        <h2>Question</h2>
+                    <section class="questions" id="questions-page">
+                        <h2 id="question">Question</h2>
                         <ul>
-                            <li><button>Choice 1</button></li>
-                            <li><button>Choice 2</button></li>
-                            <li><button>Choice 3</button></li>
-                            <li><button>Choice 4</button></li>
+                            <li><button class="a">Choice 1</button></li>
+                            <li><button class="b">Choice 2</button></li>
+                            <li><button class="c">Choice 3</button></li>
+                            <li><button class="d">Choice 4</button></li>
                     </section>
-                    <section class="end-of-quiz">
+                    <section class="end-of-quiz" id="high-score-page">
+                        <h2>End of Quiz!</h2>
+                        <h2>Your Score:</h2>
+                        <form>
+                            <label for="">Enter initials</label>
+                            <input type="text/input">
+                            <button id="submit-button">Submit</button>
+                        </form>
+                        <div id="high-score-initals"></div>
+                        <div id="score-input"></div>
 
                     </section>
                 </main>

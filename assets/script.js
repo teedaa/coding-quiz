@@ -9,7 +9,8 @@ var endScore = document.getElementById("end-score");
 var initialInput = document.getElementById("initials");
 var highScorePage = document.getElementById("score-page");
 var startTime = 120;
-
+// var timerState;
+quizBody.style.display ="none";
 startQuiz.addEventListener("click", startGame);
 //Quiz questions
 
@@ -69,10 +70,17 @@ var questions = [
 
 // Game Start Function
 
-function startGame() {
-    startQuiz.setAttribute("class", "hide")
-    timerState=setInterval(function(){
-        startTime--
-        quizTimer.textContent="Timer: "+ startTime
-    }
+function startGame(){
+    quizIntro.style.display="none";
+    console.log("game started");
+var timerState
+timerState =setInterval(function(){
+    quizTimer.innerHTML="Time: " + startTime;
+    startTime--;
+if (startTime === 0){
+    clearInterval(timerState);
+    alert("Out of time!")
+ }
+ }, 1000); 
+ quizBody.style.removeProperty("display");   
 }

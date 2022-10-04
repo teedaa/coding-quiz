@@ -9,6 +9,7 @@ var endScore = document.getElementById("end-score");
 var initialInput = document.getElementById("initials");
 var highScorePage = document.getElementById("score-page");
 var startTime = 120;
+var indexQuestion=0;
 // var timerState;
 quizBody.style.display ="none";
 startQuiz.addEventListener("click", startGame);
@@ -83,4 +84,9 @@ if (startTime === 0){
  }
  }, 1000); 
  quizBody.style.removeProperty("display");   
+}
+
+function nextQuestion() {
+    var currentQuestion = questions[indexQuestion];
+    
 }

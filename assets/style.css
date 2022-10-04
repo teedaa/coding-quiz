@@ -111,11 +111,6 @@ main {
     color: var(--accent);
 }
 
-.questions ul li {
-    list-style-type: none;
-    margin: 10px 0;
-}
-
 
 /* quiz end*/
 

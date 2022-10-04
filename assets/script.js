@@ -3,13 +3,13 @@ var startQuiz = document.getElementById("start-button");
 var quizTimer = document.getElementById("timer");
 var quizBody = document.getElementById("questions-page");
 var quizQuestion = document.getElementById("question");
-var quizChoices= document.getElementById("choice-btn");
+var quizChoices= document.getElementById("choice-buttons");
 var resultEl = document.getElementById("result");
 var endScore = document.getElementById("end-score");
 var initialInput = document.getElementById("initials");
 var highScorePage = document.getElementById("score-page");
 var startTime = 120;
-var indexQuestion=0;
+var indexQuestion= 0;
 // var timerState;
 quizBody.style.display ="none";
 startQuiz.addEventListener("click", startGame);
@@ -17,52 +17,52 @@ startQuiz.addEventListener("click", startGame);
 
 var questions = [
     {
-        question: "What does HTML stand for?",
+        title: "What does HTML stand for?",
         choices: ["Hey That's My Lunch", "How to Meet Ladies","Hyper Text Markup Language", "Head Text Made Large"],
         answer: "Hyper Text Markup Language"
     },
     {
-        question: "How many elements can an ID attribute be applied to?",
+        title: "How many elements can an ID attribute be applied to?",
         choices: ["4", "5", "1", "There is no limit."],
         answer: "1"
     },
     {
-        question: "Which HTML attribute references an image?",
+        title: "Which HTML attribute references an image?",
         choices: ["img", "href", "image", "p"],
         answer: "img"
     },
     {
-        question: "Which operator is used to assign a variable in JavaScript?",
+        title: "Which operator is used to assign a variable in JavaScript?",
         choices: ["$", "+", "-", "=" ],
         answer:  "="
     },
     {
-        question: "Are elements in JavaScript case sensitive?",
+        title: "Are elements in JavaScript case sensitive?",
         choices: ["Yes", "Sometimes", "No", "No but I am"],
         answer: "Yes"
     },
     {
-        question: "What is used to style a webpage?",
+        title: "What is used to style a webpage?",
         choices: ["HTML", "jQuery", "Farley", "CSS"],
         answer: "CSS"
     },
     {
-        question: "What does DOM stand for?",
+        title: "What does DOM stand for?",
         choices: ["Family", "Document Object Model", "Double Ox Meat", "Document Orientation Model"],
         answer: "Document Object Model"
     },
     {
-       question: "Arrays in JavaScript can be used to store",
+       title: "Arrays in JavaScript can be used to store",
        choices: ["Other arrays", "strings", "numbers", "All of the above"],
        answer: "All of the above"
     },
     {
-        question: "What does a comment look like in CSS?",
+        title: "What does a comment look like in CSS?",
         choices: ["!--Comment", "/* Comment", "//Comment", "--Comment"],
         answer: "/* Comment"
     },
     {
-        question: "Which boolean operator represents 'or'?",
+        title: "Which boolean operator represents 'or'?",
         choices: ["||", "*", "&&", "?!"],
         answer: "||"
     }
@@ -84,9 +84,34 @@ if (startTime === 0){
  }
  }, 1000); 
  quizBody.style.removeProperty("display");   
+ nextQuestion()
 }
 
 function nextQuestion() {
-    var currentQuestion = questions[indexQuestion];
-    
+    var currentQuestion=questions[indexQuestion]
+    quizQuestion.innerHTML=currentQuestion.title
+    quizChoices.innerHTML=""
+    currentQuestion.choices.forEach(function(responses){
+        var questionBtn=document.createElement("button")
+        questionBtn.setAttribute=("value",responses)
+        questionBtn.textContent=responses
+        questionBtn.onclick=selectAnswer
+        quizChoices.append(questionBtn)
+    })
+}
+function selectAnswer() {
+    if (questions.value==questions[indexQuestion].answer){
+        alert("Correct!")
+    }
+    else 
+    {alert("Wrong!")
+    startTime = startTime-10
+    quizTimer.textContent=startTime
+}
+indexQuestion++
+if (indexQuestion===quizQuestion.length) {
+    alert("Game over")
+    gameOver()
+}
+else {nextQuestion()}
 }

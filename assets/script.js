@@ -75,10 +75,10 @@ function startGame(){
     quizIntro.style.display="none";
     console.log("game started");
 var timerState
-timerState =setInterval(function(){
+timerState = setInterval(function(){
     quizTimer.innerHTML="Time: " + startTime;
     startTime--;
-if (startTime === 0){
+if (startTime == 0){
     clearInterval(timerState);
     alert("Out of time!")
  }
@@ -88,7 +88,7 @@ if (startTime === 0){
 }
 
 function nextQuestion() {
-    var currentQuestion=questions[indexQuestion]
+    var currentQuestion = questions[indexQuestion]
     quizQuestion.innerHTML=currentQuestion.title
     quizChoices.innerHTML=""
     currentQuestion.choices.forEach(function(responses){
@@ -100,6 +100,7 @@ function nextQuestion() {
     })
 }
 function selectAnswer() {
+    console.log(selectAnswer)
     if (questions.value==questions[indexQuestion].answer){
         alert("Correct!")
     }
@@ -109,7 +110,7 @@ function selectAnswer() {
     quizTimer.textContent=startTime
 }
 indexQuestion++
-if (indexQuestion===quizQuestion.length) {
+if (indexQuestion==quizQuestion.length) {
     alert("Game over")
     gameOver()
 }
